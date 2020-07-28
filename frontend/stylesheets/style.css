@@ -18,8 +18,13 @@ body {
 }
 .card .content {
   width: 400px;
-  padding: 30px;
   box-sizing: border-box;
+}
+.content img {
+  display: inline-block;
+  object-fit: cover;
+  width: 400px;
+  height: 300px;
 }
 .card .sliderText {
    position: relative;
