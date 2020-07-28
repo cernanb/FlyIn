@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Country.create(name: "India", image: "India.jpg")
+Country.create(name: "India", image: "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2015/08/Victoria-Memorial-during-Sunset-in-Kolkata.jpg")
+Country.create(name: "Brazil", image: "https://www.internationaltaxreview.com/Media/images/international-tax-review/anjana-haines/july-2019/rio-de-janeiro-630%20x%20570.jpg")
