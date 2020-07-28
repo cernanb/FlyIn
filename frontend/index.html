@@ -3,8 +3,70 @@
   <head>
     <meta charset="utf-8">
     <title>FlyIn</title>
+    <link rel="stylesheet" href="stylesheets/swiper.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="index.js"></script>
+    <script src="javascript/country.js"></script>
+    <script src="javascript/place.js"></script>
   </head>
   <body>
+   <div class="swiper-container">
+    <div class="swiper-wrapper">
+    <div class="swiper-slide">
+    <div class="card">
+      <div class="sliderText">
+        <h3>India</h3>
+      </div>
+      <div class="content">
+        <!-- <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2015/08/Victoria-Memorial-during-Sunset-in-Kolkata.jpg"> -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+    </div>
+    <div class="swiper-slide">
+    <div class="card">
+      <div class="sliderText">
+        <h3>Brazil</h3>
+      </div>
+      <div class="content">
+        <!-- <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2015/08/Victoria-Memorial-during-Sunset-in-Kolkata.jpg"> -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+    </div>
+    <div class="swiper-slide">
+    <div class="card">
+      <div class="sliderText">
+        <h3>Switzerland</h3>
+      </div>
+      <div class="content">
+        <!-- <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2015/08/Victoria-Memorial-during-Sunset-in-Kolkata.jpg"> -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script src="javascript/swiper.min.js"></script>
+    <script>
+    let swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 30,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+
 
 
   </body>
