@@ -4,7 +4,6 @@ class CreatePlaces < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :image
       t.string :description
-      t.integer :country_id
 
       t.timestamps
     end
