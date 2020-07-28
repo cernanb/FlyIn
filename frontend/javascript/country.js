@@ -1,7 +1,6 @@
 class Country {
-  constructor(name, image, description){
+  constructor(name, image){
     this.name = name
     this.image = image
-    this.description = description
   }
 }
