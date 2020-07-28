@@ -15,7 +15,7 @@ renderCountry() {
     <div class="sliderText">
       <h3>${this.name}</h3>
     </div>
-    <div class="content">
+    <div class="content" id="img-content">
       <img src=${this.image}>
     </div>
   </div>
