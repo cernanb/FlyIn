@@ -1,62 +1,63 @@
-const BASE_URL = "http://localhost:3000/"
+const BASE_URL = 'http://localhost:3000/';
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetchCountries()
-  addCountry()
+document.addEventListener('DOMContentLoaded', () => {
+  fetchCountries();
+  addCountry();
   // chosenCountry()
-})
+});
 
-function fetchCountries(){
+function fetchCountries() {
   fetch(`${BASE_URL}/countries`)
-  .then(resp => resp.json())
-  .then(countries => {
-    for (const country of countries){
-      let cntry = new Country(country.id, country.name, country.image)
-      cntry.renderCountry()
-    }
-  })
+    .then((resp) => resp.json())
+    .then((countries) => {
+      for (const country of countries) {
+        let cntry = new Country(
+          country.id,
+          country.name,
+          country.get_image_url
+        );
+        cntry.renderCountry();
+      }
+    });
 }
 
-function addCountry(){
-  let form = document.getElementById('country-form')
+function addCountry() {
+  let form = document.getElementById('country-form');
 
-  form.innerHTML +=
-  `
+  form.innerHTML += `
   <form class="form-section" id="country-form" action="index.html" method="post">
-   <input type="text" id="c-name" placeholder="Country">
-   <input type="text" id="c-image" placeholder="Image address">
+   <input type="text" id="c-name" name="name" placeholder="Country">
+   <input type="file" id="c-image" name="image" accept="image/*">
    <input type="submit">
   </form>
-  `
-  form.addEventListener("submit", addCountrySubmit)
+  `;
+  form.addEventListener('submit', addCountrySubmit);
 }
 
-function addCountrySubmit(){
-  event.preventDefault()
-  let countryName = document.getElementById('c-name').value
-  let countryImage = document.getElementById('c-image').value
-
-
-  let country = {
-    name: countryName,
-    image: countryImage
-  }
+function addCountrySubmit(event) {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  // let countryName = document.getElementById('c-name').value;
+  // let countryImage = document.getElementById('c-image').value;
+  debugger;
+  // let country = {
+  //   name: countryName,
+  //   image: countryImage,
+  // };
 
   fetch(`${BASE_URL}/countries`, {
-
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-type": "application/json",
-      "Accept": "application/json"
+      // 'Content-type': 'application/json',
+      Accept: 'application/json',
     },
-    body: JSON.stringify(country)
+    body: formData,
   })
-  .then(resp => resp.json())
-  .then(country => {
-    let cntry = new Country(country.id, country.name, country.image)
-    cntry.renderCountry()
-  })
-
+    .then((resp) => resp.json())
+    .then((country) => {
+      let cntry = new Country(country.id, country.name, country.get_image_url);
+      cntry.renderCountry();
+    });
 }
 
 // function chooseCountry() {
