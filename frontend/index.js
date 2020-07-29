@@ -3,6 +3,7 @@ const BASE_URL = "http://localhost:3000/"
 document.addEventListener("DOMContentLoaded", () => {
   fetchCountries()
   addCountry()
+  chooseCountry()
 })
 
 function fetchCountries(){
@@ -15,11 +16,6 @@ function fetchCountries(){
     }
   })
 }
-
-// function renderCountries(countries){
-//
-//
-// }
 
 function addCountry(){
   let form = document.getElementById('country-form')
@@ -62,5 +58,33 @@ function addCountrySubmit(){
     let cntry = new Country(country.id, country.name, country.image)
     cntry.renderCountry()
   })
+
+}
+
+function chooseCountry() {
+  let countryCard = document.getElementById('sliderText')
+
+  countryCard.addEventListener("click", function fetchPlaces(){
+    fetch(`${BASE_URL}/places`)
+    .then(resp => resp.json())
+    .then(places => {
+      for (const place of places){
+        let p = new Place(place.name, place.image, place.description)
+        p.renderPlace()
+      }
+  })
+
+})
+
+// function fetchPlaces(){
+//   fetch(`${BASE_URL}/places`)
+//   .then(resp => resp.json())
+//   .then(places => {
+//     for (const place of places){
+//       let p = new Place(place.name, place.image, place.description)
+//       p.renderPlace()
+//     }
+//   })
+
 
 }

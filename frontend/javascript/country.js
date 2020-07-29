@@ -11,8 +11,8 @@ renderCountry() {
   countryWrapper.innerHTML +=
   `
   <div class="swiper-slide">
-  <div class="card">
-    <div class="sliderText">
+  <div class="card" id="card">
+    <div class="sliderText" id="sliderText">
       <h3>${this.name}</h3>
     </div>
     <div class="content" id="img-content">
