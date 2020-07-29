@@ -23,10 +23,10 @@ function addCountry(){
   form.innerHTML +=
   `
   <form class="form-section" id="country-form" action="index.html" method="post">
-   Country:<input type="text" id="c-name">
+   <input type="text" id="c-name" placeholder="Country">
    <input type="file" id="c-image">
    <br><img src="" id="myImg" alt="" width="200" height="200">
-   <br></br>
+   <br>
    <button type="submit">Add</button>
   </form>
   `
@@ -64,27 +64,17 @@ function addCountrySubmit(){
 function chooseCountry() {
   let countryCard = document.getElementById('sliderText')
 
-  countryCard.addEventListener("click", function fetchPlaces(){
-    fetch(`${BASE_URL}/places`)
-    .then(resp => resp.json())
-    .then(places => {
-      for (const place of places){
-        let p = new Place(place.name, place.image, place.description)
-        p.renderPlace()
-      }
+  countryCard.addEventListener("click", fetchPlaces)
+
+}
+
+function fetchPlaces(){
+  fetch(`${BASE_URL}/places`)
+  .then(resp => resp.json())
+  .then(places => {
+    for (const place of places){
+      let p = new Place(place.name, place.image, place.description)
+      p.renderPlace()
+    }
   })
-
-})
-
-// function fetchPlaces(){
-//   fetch(`${BASE_URL}/places`)
-//   .then(resp => resp.json())
-//   .then(places => {
-//     for (const place of places){
-//       let p = new Place(place.name, place.image, place.description)
-//       p.renderPlace()
-//     }
-//   })
-
-
 }
