@@ -1,4 +1,5 @@
 class Place < ApplicationRecord
-  belongs_to :Country
-  
+  belongs_to :country
+  has_one_attached :image
+
 end
