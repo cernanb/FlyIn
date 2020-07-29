@@ -37,18 +37,10 @@ function addCountry() {
 function addCountrySubmit(event) {
   event.preventDefault();
   const formData = new FormData(event.target);
-  // let countryName = document.getElementById('c-name').value;
-  // let countryImage = document.getElementById('c-image').value;
-  debugger;
-  // let country = {
-  //   name: countryName,
-  //   image: countryImage,
-  // };
 
   fetch(`${BASE_URL}/countries`, {
     method: 'POST',
     headers: {
-      // 'Content-type': 'application/json',
       Accept: 'application/json',
     },
     body: formData,
