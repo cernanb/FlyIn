@@ -3,7 +3,7 @@ const BASE_URL = "http://localhost:3000/"
 document.addEventListener("DOMContentLoaded", () => {
   fetchCountries()
   addCountry()
-  // chooseCountry()
+  // chosenCountry()
 })
 
 function fetchCountries(){
@@ -24,10 +24,8 @@ function addCountry(){
   `
   <form class="form-section" id="country-form" action="index.html" method="post">
    <input type="text" id="c-name" placeholder="Country">
-   <input type="file" id="c-image">
-   <br><img src="url_for(${this.image})" id="myImg" alt="" width="200" height="200">
-   <br>
-   <button type="submit">Add</button>
+   <input type="text" id="c-image" placeholder="Image address">
+   <input type="submit">
   </form>
   `
   form.addEventListener("submit", addCountrySubmit)
@@ -62,19 +60,6 @@ function addCountrySubmit(){
 }
 
 // function chooseCountry() {
-//   let countryCard = document.getElementById('sliderText')
-//
-//   countryCard.addEventListener("click", fetchPlaces)
-//
-// }
-//
-// function fetchPlaces(){
-//   fetch(`${BASE_URL}/places`)
-//   .then(resp => resp.json())
-//   .then(places => {
-//     for (const place of places){
-//       let p = new Place(place.name, place.image, place.description)
-//       p.renderPlace()
-//     }
-//   })
+//   let countryCard = document.getElementById('swipe-wrap')
+//   countryCard.addEventListener('click', chosenCountry)
 // }
